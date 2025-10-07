@@ -1,0 +1,26 @@
+OPENWEATHER API TEST RAPORU
+Tarih: 07.10.2025 10:44:18
+Test Edilen: https://api.openweathermap.org/data/2.5/weather
+SSL Doğrulama: Devre Dışı (Kurumsal network)
+============================================================
+
+TEST: Başarılı şehir sorgusu
+BEKLENEN: 200 OK ve geçerli yanıt
+SONUÇ: FAIL
+DETAY: Status: 302, Istanbul verisi: false
+--------------------------------------------------
+TEST: Hatalı şehir sorgusu
+BEKLENEN: 404 Not Found
+SONUÇ: FAIL
+DETAY: Status: 302, Body: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtm...
+--------------------------------------------------
+TEST: API Key olmadan çağrı
+BEKLENEN: 401 Unauthorized
+SONUÇ: FAIL
+DETAY: Status: 302, Body: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtm...
+--------------------------------------------------
+TEST: Yanıt formatı doğrulama
+BEKLENEN: Tüm required field'lar mevcut
+SONUÇ: FAIL
+DETAY: Status: 302, Tüm field'lar: false
+--------------------------------------------------

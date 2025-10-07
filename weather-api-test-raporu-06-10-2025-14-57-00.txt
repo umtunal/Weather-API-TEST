@@ -1,0 +1,26 @@
+OPENWEATHER API TEST RAPORU
+Tarih: 06.10.2025 14:56:59
+Test Edilen: https://api.openweathermap.org/data/2.5/weather
+SSL Doğrulama: Devre Dışı (Kurumsal network)
+============================================================
+
+TEST: Başarılı şehir sorgusu
+BEKLENEN: 200 OK ve geçerli yanıt
+SONUÇ: PASS
+DETAY: Status: 200, Istanbul verisi: true
+--------------------------------------------------
+TEST: Hatalı şehir sorgusu
+BEKLENEN: 404 Not Found
+SONUÇ: PASS
+DETAY: Status: 404, Body: {"cod":"404","message":"city not found"}
+--------------------------------------------------
+TEST: API Key olmadan çağrı
+BEKLENEN: 401 Unauthorized
+SONUÇ: PASS
+DETAY: Status: 401, Body: {"cod":401, "message": "Invalid API key. Please see https://openweathermap.org/faq#error401 for more...
+--------------------------------------------------
+TEST: Yanıt formatı doğrulama
+BEKLENEN: Tüm required field'lar mevcut
+SONUÇ: PASS
+DETAY: Status: 200, Tüm field'lar: true
+--------------------------------------------------
